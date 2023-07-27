@@ -5,7 +5,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: git@github.com:benkorichard/argocd-test
+    repoURL: https://github.com/benkorichard/argocd-test.git
     path: apps/ingress
     targetRevision: HEAD
   destination:
