@@ -1,0 +1,6 @@
+apiVersion: v2
+description:
+    Meta Chart to deploy Applications
+name: meta
+type: application
+version: 0.1.0
