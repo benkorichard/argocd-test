@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ingress
+spec:
+  project: default
+  source:
+    repoURL: git@github.com:benkorichard/argocd-test
+    path: apps/ingress
+    targetRevision: HEAD
+  destination:
+    namespace: ingress
+    name: in-cluster
+  syncPolicy:
+    automated: {}
+    syncOptions:
+      - CreateNamespace=true
