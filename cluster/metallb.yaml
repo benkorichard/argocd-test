@@ -3,7 +3,7 @@ kind: Application
 metadata:
     finalizers:
         - resources-finalizer.argocd.argoproj.io
-    name: onepassword-secrets-automation
+    name: metallb
     namespace: argocd
 spec:
     destination:
