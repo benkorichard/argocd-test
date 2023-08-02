@@ -21,7 +21,7 @@ spec:
                                - 192.168.33.100-192.168.33.200
         path: metallb
         repoURL: https://metallb.github.io/metallb
-        targetRevision: connect-1.9.0
+        targetRevision: 0.13.10 
     syncPolicy:
         automated:
             prune: true
