@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+    finalizers:
+        - resources-finalizer.argocd.argoproj.io
+    name: onepassword-secrets-automation
+    namespace: argocd
+spec:
+    destination:
+        namespace: metallb-system
+        server: https://kubernetes.default.svc
+    project: default
+    source:
+        helm:
+            values: |
+                configInline:
+                    address-pools:
+                         - name: default
+                           protocol: layer2
+                           addresses:
+                               - 192.168.33.100-192.168.33.200
+        path: metallb
+        repoURL: https://metallb.github.io/metallb
+        targetRevision: connect-1.9.0
+    syncPolicy:
+        automated:
+            prune: true
+            selfHeal: true
+        syncOptions:
+            - CreateNamespace=true
