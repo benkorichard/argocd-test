@@ -9,7 +9,7 @@ spec:
     path: apps/ingress
     targetRevision: HEAD
   destination:
-    namespace: ingress
+    namespace: argocd
     name: in-cluster
   syncPolicy:
     automated: {}
