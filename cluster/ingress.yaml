@@ -2,6 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: ingress
+  namespace: argocd
 spec:
   project: default
   source:
@@ -9,7 +10,7 @@ spec:
     path: apps/ingress
     targetRevision: HEAD
   destination:
-    namespace: argocd
+    namespace: ingress
     name: in-cluster
   syncPolicy:
     automated: {}
